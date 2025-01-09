@@ -2,8 +2,7 @@ main {
   width: 90%;
   max-width: 50rem;
   margin: 2.5rem auto;
-  display: grid;
-  grid-auto-flow: row;
+  display: flex;
   gap: 2rem;
 }
 
