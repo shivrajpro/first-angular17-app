@@ -24,6 +24,7 @@ button:active,
 .active {
     background-color: #9965dd;
     color: #150722;
+    border: 4px solid #9965dd;
 }
 
 img {
