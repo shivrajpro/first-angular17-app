@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from './task/task.component';
 import { dummyTasks } from '../dummy-tasks';
-import { Task } from './task/task.model';
+import { NewTaskData, Task } from './task/task.model';
 import { NewTaskComponent } from './new-task/new-task.component';
 
 @Component({
@@ -32,5 +32,17 @@ export class TasksComponent {
 
   closeAddNewTaskDialog() {
     this.isAddingTask = false;
+  }
+
+  addNewTask(newTask: NewTaskData) {
+    this.tasks.unshift({
+      id: new Date().getTime().toString(),
+      userId: this.userId,
+      title: newTask.title,
+      summary: newTask.summary,
+      dueDate: newTask.date,
+    });
+
+    this.closeAddNewTaskDialog();
   }
 }
